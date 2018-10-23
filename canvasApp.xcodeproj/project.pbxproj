@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		1C780E4E217EA46D00956A61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C780E4D217EA46D00956A61 /* AppDelegate.swift */; };
-		1C780E50217EA46D00956A61 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C780E4F217EA46D00956A61 /* ViewController.swift */; };
 		1C780E53217EA46D00956A61 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C780E51217EA46D00956A61 /* Main.storyboard */; };
 		1C780E55217EA47100956A61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C780E54217EA47100956A61 /* Assets.xcassets */; };
 		1C780E58217EA47100956A61 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C780E56217EA47100956A61 /* LaunchScreen.storyboard */; };
 		1C780E63217EA47100956A61 /* canvasAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C780E62217EA47100956A61 /* canvasAppTests.swift */; };
 		1C780E6E217EA47100956A61 /* canvasAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C780E6D217EA47100956A61 /* canvasAppUITests.swift */; };
+		1C780E7C217EA4CE00956A61 /* CanvasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C780E7B217EA4CE00956A61 /* CanvasViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +36,6 @@
 /* Begin PBXFileReference section */
 		1C780E4A217EA46C00956A61 /* canvasApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = canvasApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C780E4D217EA46D00956A61 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1C780E4F217EA46D00956A61 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1C780E52217EA46D00956A61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1C780E54217EA47100956A61 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1C780E57217EA47100956A61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +46,7 @@
 		1C780E69217EA47100956A61 /* canvasAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = canvasAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C780E6D217EA47100956A61 /* canvasAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = canvasAppUITests.swift; sourceTree = "<group>"; };
 		1C780E6F217EA47100956A61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1C780E7B217EA4CE00956A61 /* CanvasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,11 +98,11 @@
 			isa = PBXGroup;
 			children = (
 				1C780E4D217EA46D00956A61 /* AppDelegate.swift */,
-				1C780E4F217EA46D00956A61 /* ViewController.swift */,
 				1C780E51217EA46D00956A61 /* Main.storyboard */,
 				1C780E54217EA47100956A61 /* Assets.xcassets */,
 				1C780E56217EA47100956A61 /* LaunchScreen.storyboard */,
 				1C780E59217EA47100956A61 /* Info.plist */,
+				1C780E7B217EA4CE00956A61 /* CanvasViewController.swift */,
 			);
 			path = canvasApp;
 			sourceTree = "<group>";
@@ -256,7 +256,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1C780E50217EA46D00956A61 /* ViewController.swift in Sources */,
+				1C780E7C217EA4CE00956A61 /* CanvasViewController.swift in Sources */,
 				1C780E4E217EA46D00956A61 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
