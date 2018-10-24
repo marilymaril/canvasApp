@@ -26,11 +26,6 @@ class CanvasViewController: UIViewController {
         trayUp = trayView.center // The initial position of the tray
         trayDown = CGPoint(x: trayView.center.x ,y: trayView.center.y + trayDownOffset) // The position of the tray transposed down
         
-        let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(didPan(sender:)))
-        
-        // Attach it to a view of your choice. If it's a UIImageView, remember to enable user interaction
-        newlyCreatedFace.isUserInteractionEnabled = true
-        newlyCreatedFace.addGestureRecognizer(panGestureRecognizer)
     }
     
     @IBAction func didPanTray(_ sender: UIPanGestureRecognizer) {
@@ -56,6 +51,7 @@ class CanvasViewController: UIViewController {
     
     @IBAction func didPanFace(_ sender: UIPanGestureRecognizer) {
         let translation = sender.translation(in: view)
+        var panGestureRecognizer: UIPanGestureRecognizer!
         
         if sender.state == .began {
             let imageView = sender.view as! UIImageView
@@ -68,20 +64,31 @@ class CanvasViewController: UIViewController {
             newlyCreatedFace.center = CGPoint(x: newlyCreatedFaceOriginalCenter.x + translation.x, y: newlyCreatedFaceOriginalCenter.y + translation.y)
 
         } else if sender.state == .ended {
-//            if velocity.y > 0 {
-//                UIView.animate(withDuration: 0.3) {
-//                    self.trayView.center = self.trayDown
-//                }
-//            } else {
-//                UIView.animate(withDuration: 0.3) {
-//                    self.trayView.center = self.trayUp
-//                }
-//            }
+            UIView.animate(withDuration: 0.4, animations: {
+                self.newlyCreatedFace.transform = CGAffineTransform(scaleX: 1, y: 1)
+            })
+            
+            newlyCreatedFace.isUserInteractionEnabled = true
+            let addGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(didPan(sender:)))
+            newlyCreatedFace.isUserInteractionEnabled = true
+            newlyCreatedFace.addGestureRecognizer(addGestureRecognizer)
         }
     }
     
-    func didPan(_ sender: UIPanGestureRecognizer) {
-        
+    @objc func didPan(sender: UIPanGestureRecognizer) {
+        let translation = sender.translation(in: view)
+
+        if sender.state == .began {
+            newlyCreatedFace = (sender.view as! UIImageView) 
+            newlyCreatedFaceOriginalCenter = newlyCreatedFace.center // so we can offset by translation later.
+        } else if sender.state == .changed {
+            newlyCreatedFace.center = CGPoint(x: newlyCreatedFaceOriginalCenter.x + translation.x, y: newlyCreatedFaceOriginalCenter.y + translation.y)
+
+        } else if sender.state == .ended {
+            UIView.animate(withDuration: 0.4, animations: {
+                self.newlyCreatedFace.transform = CGAffineTransform(scaleX: 1, y: 1)
+            })
+        }
     }
     
     
